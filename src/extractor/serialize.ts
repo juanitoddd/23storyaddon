@@ -1,6 +1,6 @@
 import ts from 'typescript';
 
-import {
+import type {
     ExportedDeclarations,
     VariableDeclaration,
     InterfaceDeclaration,

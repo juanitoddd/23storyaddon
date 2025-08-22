@@ -1,5 +1,5 @@
+import type { Link } from 'src/extractor/Declarations';
 import { A, UL, LI } from 'storybook/internal/components';
-import { Link } from '@designsystem/extract';
 
 interface LinksProps {
   links: Link[];

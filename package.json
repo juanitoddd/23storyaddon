@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "description": "23° Galaxy storybook addon",
   "keywords": [
-    "galaxy storybook addon types", "storybook-addons"
+    "galaxy storybook addon types",
+    "storybook-addons"
   ],
   "repository": {
     "type": "git",
@@ -45,11 +46,17 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@storybook/icons": "^1.4.0"
+    "@storybook/icons": "^1.4.0",
+    "css-tree": "^3.1.0",
+    "fs-extra": "^11.3.1",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@storybook/addon-docs": "^9.0.0",
     "@storybook/react-vite": "^9.0.0",
+    "@types/css-tree": "^2.3.10",
+    "@types/fs-extra": "^11.0.4",
+    "@types/lodash": "^4.17.20",
     "@types/node": "^22",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.21",

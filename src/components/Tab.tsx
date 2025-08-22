@@ -6,8 +6,8 @@ import _ from 'lodash';
 
 import { KEY } from "../constants";
 
-import { InterfaceDoc } from '@designsystem/components';
 import allTypes from 'output/types.json' with {type: 'json'};
+import InterfaceDoc from "./InterfaceDoc";
 
 interface TabProps {
   active: boolean;
@@ -72,7 +72,7 @@ export const Tab: React.FC<TabProps> = ({ active, api }) => {
     <TabWrapper ref={myRef}>
       <TabInner>
         <H1>{safeName}</H1>
-        {/*Object.keys(types).map((type:string) => <InterfaceDoc doc={types[type]} /> )*/}
+        {Object.keys(types).map((type:string) => <InterfaceDoc doc={types[type]} /> )}
       </TabInner>
     </TabWrapper>
   );

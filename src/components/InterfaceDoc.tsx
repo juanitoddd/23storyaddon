@@ -1,8 +1,8 @@
 import { H3, H4, Table, P, Code } from 'storybook/internal/components';
-import { InterfaceDeclaration } from '@designsystem/extract';
-
+import type { InterfaceDeclaration } from 'src/extractor/Declarations';
 import { Badge } from './Badge';
 import { Links } from './JsDoc';
+
 interface InterfaceDocProps {
   doc: InterfaceDeclaration;
   title?: string;
