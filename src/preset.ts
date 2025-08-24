@@ -35,7 +35,7 @@ export const managerEntries = async (entry = [], options: any) => {
   // console.log("🚀 ~ css:", css)
 
   // console.log("🚀 ~ patternComponents:", options.patternComponents)
-  const filesComponents = glob.sync(options.patternComponents, { ignore: ['*.d.ts', '**/node_modules/**'] });
+  // const filesComponents = glob.sync(options.patternComponents, { ignore: ['*.d.ts', '**/node_modules/**'] });
   // console.log("🚀 ~ filesComponents:", filesComponents)
   
   fs.ensureDirSync(outputDir);
