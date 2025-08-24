@@ -1,3 +1,4 @@
+import React from "react";
 import { H3, H4, Table, P, Code } from 'storybook/internal/components';
 import type { InterfaceDeclaration } from 'src/extractor/Declarations';
 import { Badge } from './Badge';
@@ -9,10 +10,12 @@ interface InterfaceDocProps {
   description?: string;
 }
 
-export default function InterfaceDoc({ doc, title = doc.name, description = doc?.description }: InterfaceDocProps) {
+export const InterfaceDoc: React.FC<InterfaceDocProps> = ({ doc, title = doc.name, description = doc?.description }: InterfaceDocProps) => {  
+   
   if (doc.kind !== 'interface') {
     throw new Error('InterfaceDoc can only be used with interface, be sure to send the right kind.');
   }
+  
   return (
     <>
       <H3 className="sbdocs sbdocs-h3">{title}</H3>
@@ -62,5 +65,5 @@ export default function InterfaceDoc({ doc, title = doc.name, description = doc?
         </tbody>
       </Table>
     </>
-  );
-}
+  )  
+};

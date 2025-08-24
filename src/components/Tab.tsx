@@ -7,7 +7,7 @@ import _ from 'lodash';
 import { KEY } from "../constants";
 
 import allTypes from 'output/types.json' with {type: 'json'};
-import InterfaceDoc from "./InterfaceDoc";
+import { InterfaceDoc } from "./InterfaceDoc";
 
 interface TabProps {
   active: boolean;
@@ -28,7 +28,7 @@ const TabInner = styled.div({
 });
 
 export const Tab: React.FC<TabProps> = ({ active, api }) => {  
-  const storyData = api.getCurrentStoryData()
+  const storyData = api.getCurrentStoryData()  
   const path = storyData.importPath;
   const isDocs = path.endsWith('.mdx') || path.endsWith('.md')  
   if (!active || isDocs) {
@@ -42,25 +42,21 @@ export const Tab: React.FC<TabProps> = ({ active, api }) => {
     if(wrapper) wrapper.style.display = 'block';
   }, []);
     
-  const typesJson: any = allTypes  
-  console.log("🚀 ~ allTypes:", allTypes)
-  console.log("🚀 ~ typesJson:", typesJson)
-  const re = /([^/]+)\.stories\.ts$/;
-  const name = storyData.importPath.match(re)?.[1]; // Component Name
+  const typesJson: any = allTypes
+  const re = /([^/]+)\.component.stories\.ts$/;
+  const name = storyData.importPath.match(re)?.[1]; // Component Name  
   let types: any = {}
-  let safeName: string = ''
+  let safeName = ''
   if (name) {
-    console.log("🚀 ~ name:", name)
-    safeName = _.upperFirst(_.camelCase(name))    
+    safeName = _.upperFirst(_.camelCase(name))
     types = typesJson[safeName] ?? {}    
   }
+  console.log("🚀 ~ types:", safeName, types)
   // https://storybook.js.org/docs/react/addons/addons-api#useparameter
   const config = useParameter<string>(
     KEY,
     "fallback value of config from parameter",
-  );
-
-  console.log("Object.keys(types)", types)
+  );  
 
   // https://storybook.js.org/docs/addons/addons-api#useglobals
   const [globals, updateGlobals] = useGlobals();
@@ -76,7 +72,7 @@ export const Tab: React.FC<TabProps> = ({ active, api }) => {
     <TabWrapper ref={myRef}>
       <TabInner>
         <H1>{safeName}</H1>
-        {/*Object.keys(types).map((type:string) => <InterfaceDoc doc={types[type]} /> )*/}
+        {Object.keys(types).map((type:string) => <InterfaceDoc doc={types[type]} /> )}
       </TabInner>
     </TabWrapper>
   );

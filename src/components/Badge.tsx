@@ -5,7 +5,7 @@ interface BadgeProps {
   children: React.ReactNode;
 }
 
-export function Badge({ children, status }: BadgeProps) {
+export const Badge: React.FC<BadgeProps> = ({ children, status }: BadgeProps) => {
   let backgroundColor = '';
   switch (status) {
     case 'danger': {
