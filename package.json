@@ -1,6 +1,6 @@
 {
   "name": "23storyaddon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "23° Galaxy storybook addon",
   "keywords": [
     "galaxy storybook addon types",
@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/juanitoddd/23storyaddon"
-  },  
+  },
   "license": "MIT",
   "author": "Juan David Diaz <juand.diazd@gmail.com>",
   "exports": {
